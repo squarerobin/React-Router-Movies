@@ -1,10 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const MovieCard = props => {
   
+    
   return (
-    <div className="save-wrapper">
-      <div className="movie-card">
+    
+    <div className="movie-card">
+      <Link className="" to={`./movies/${props.to}`}>
         <h2>{props.title}</h2>
         <div className="movie-director">
           Director: <em>{props.director}</em>
@@ -19,9 +22,12 @@ const MovieCard = props => {
             {star}
           </div>
         ))}
-      </div>
+      
       <div className="save-button">Save</div>
-    </div>
+      </Link>
+      </div>
+     
+    
   );
 };
 
