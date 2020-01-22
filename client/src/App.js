@@ -5,7 +5,7 @@ import Movie from "./Movies/Movie"
 import MovieList from "./Movies/MovieList"
 import SavedList from "./Movies/SavedList"
 
-const App = () => {
+const App = (props) => {
   const [savedList, setSavedList] = useState( [] );
 
    const addToSavedList = movie => {

@@ -15,8 +15,8 @@ const Movie = (props) => {
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           
+          //console.log(response.data.id)
           setMovie(response.data);
-          //console.log(response.data)
          
         })
         .catch(error => {
@@ -27,7 +27,8 @@ const Movie = (props) => {
   
   
   // Uncomment this only when you have moved on to the stretch goals
-   const saveMovie = () => {
+    const saveMovie = () => {
+      console.log("add to saved list: ", props.addToSavedList)
     const addToSavedList = props.addToSavedList;
     addToSavedList(movie)
    }

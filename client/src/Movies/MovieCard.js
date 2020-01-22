@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const MovieCard = props => {
   
-    
+    //console.log(props)
   return (
     
     <div className="movie-card">
@@ -15,16 +15,17 @@ const MovieCard = props => {
         <div className="movie-metascore">
           Metascore: <strong>{props.metascore}</strong>
         </div>
+       
         <h3>Actors</h3>
-
+      
         {props.stars.map(star => (
           <div key={star} className="movie-star">
             {star}
           </div>
         ))}
       
-      <div className="save-button" onClick={props.saveOnClick}>Save</div>
       </Link>
+      <div className="save-button" onClick={props.saveOnClick}>Save</div>
       </div>
      
     

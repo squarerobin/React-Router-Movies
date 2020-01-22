@@ -10,6 +10,7 @@ const MovieList = props => {
       axios
         .get("http://localhost:5000/api/movies")
         .then(response => {
+          //console.log('These are the movies: ', response.data)
           setMovies(response.data);
         })
         .catch(error => {
@@ -20,6 +21,7 @@ const MovieList = props => {
     getMovies();
   }, []);
 
+
   return (
     <div className="movie-list">
       {movies.map(movie => (
@@ -29,10 +31,10 @@ const MovieList = props => {
   );
 };
 
-function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
+function MovieDetails(props) {
+  const { title, director, metascore, stars } = props.movie;
   return (
-    <MovieCard title = {title} director = {director} metascore = {metascore} stars={stars} to={movie.id} />
+    <MovieCard title = {title} director = {director} metascore = {metascore} stars={stars} to={props.movie.id} saveOnClick={props.saveMovie} />
   );
 }
 
