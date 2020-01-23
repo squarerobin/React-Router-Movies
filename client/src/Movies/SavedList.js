@@ -6,24 +6,27 @@ import {Link} from 'react-router-dom'
 
 const SavedList = props => {
 
-  const [list] = useState([])
+  const [savedList, setSavedList] = useState( [{}] );
   
-  console.log(props.list)
-  
+  //console.log("this is props list: ", props.list)
+  console.log("list is: ", savedList)
+  const addToSavedList = () => {
+    setSavedList( [...savedList], props.movie );
+  }; 
   return (
   
 
 
-
   <div className="saved-list">
     <h3>Saved Movies:</h3>
-    {list.map(movie => (
-      <span className="saved-movie">{movie.title}</span>
+    {savedList.map(movie => (
+      <span key="movie.id" className="saved-movie">{movie.title}</span>
     ))}
     <Link className="home-button" to='/'>Home</Link>
   </div>
 )
-    };
 
+};
 
+  
 export default SavedList;

@@ -36,7 +36,9 @@ function MovieDetails(props) {
   return (
       <div className="">
         <NavLink className=""  to={`./movies/${props.movie.id}`}>
-        <MovieCard title = {title} director = {director} metascore = {metascore} stars={stars} to={props.movie.id} saveOnClick={props.saveMovie} />
+        <MovieCard title = {title} director = {director} metascore = {metascore} stars={stars} to={props.movie.id}
+         //saveOnClick={props.saveMovie}
+          />
         </NavLink>;
      </div>
   )

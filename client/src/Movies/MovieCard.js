@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const MovieCard = props => {
   
-    //console.log(props)
+    console.log(props)
   return (
     
     <div className="movie-card">
@@ -23,6 +23,8 @@ const MovieCard = props => {
             {star}
           </div>
         ))}
+      
+        
       
      
       <div className="save-button" onClick={props.saveOnClick}>Save</div>

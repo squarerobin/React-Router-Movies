@@ -25,14 +25,14 @@ const Movie = (props) => {
 
   },[props.match.params.id])
   
-  
+/*   
   // Uncomment this only when you have moved on to the stretch goals
     const saveMovie = () => {
       console.log("props: ", props)
       console.log("add to saved list: ", props.addToSavedList())
     const addToSavedList = props.addToSavedList;
     addToSavedList(movie)
-   }
+   } */
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -41,7 +41,9 @@ const Movie = (props) => {
   const { title, director, metascore, stars } = movie;
   return (
     <div className="save-wrapper">
-      <MovieCard title = {title} director = {director} metascore = {metascore} stars={stars} to={movie.id} saveOnClick={saveMovie} />
+      <MovieCard title = {title} director = {director} metascore = {metascore} stars={stars} to={movie.id} />
+      {/* //  saveOnClick={saveMovie} */}
+      
 
     </div>
   );
