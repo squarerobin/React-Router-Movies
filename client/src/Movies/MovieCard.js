@@ -7,7 +7,7 @@ const MovieCard = props => {
   return (
     
     <div className="movie-card">
-      <Link className="" to={`./movies/${props.to}`}>
+      
         <h2>{props.title}</h2>
         <div className="movie-director">
           Director: <em>{props.director}</em>
@@ -24,7 +24,7 @@ const MovieCard = props => {
           </div>
         ))}
       
-      </Link>
+     
       <div className="save-button" onClick={props.saveOnClick}>Save</div>
       </div>
      
