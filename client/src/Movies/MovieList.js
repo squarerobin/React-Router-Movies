@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard"
 
 const MovieList = props => {
@@ -34,8 +34,12 @@ const MovieList = props => {
 function MovieDetails(props) {
   const { title, director, metascore, stars } = props.movie;
   return (
-    <MovieCard title = {title} director = {director} metascore = {metascore} stars={stars} to={props.movie.id} saveOnClick={props.saveMovie} />
-  );
+      <div className="">
+        <Link className="" to={`./movies/:id`}>
+        <MovieCard title = {title} director = {director} metascore = {metascore} stars={stars} to={props.movie.id} saveOnClick={props.saveMovie} />
+        </Link>;
+     </div>
+  )
 }
 
 export default MovieList;
